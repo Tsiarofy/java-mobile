@@ -27,7 +27,6 @@ public class ParametresActivity extends AppCompatActivity {
         btnThemeSombre = findViewById(R.id.btn_theme_sombre);
         btnRetour = findViewById(R.id.btn_retour_parametres);
 
-        // Charger et appliquer le thème au démarrage
         boolean estThemeSombre = preferencesApp.getBoolean("theme_sombre", false);
         appliquerTheme(estThemeSombre);
 

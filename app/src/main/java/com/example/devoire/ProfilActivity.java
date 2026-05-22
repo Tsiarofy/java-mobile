@@ -35,7 +35,6 @@ public class ProfilActivity extends AppCompatActivity {
 
         preferencesApp = getSharedPreferences("app_prefs", MODE_PRIVATE);
 
-        // Charger et appliquer le thème
         boolean estThemeSombre = preferencesApp.getBoolean("theme_sombre", false);
         appliquerTheme(estThemeSombre);
 
@@ -49,10 +48,8 @@ public class ProfilActivity extends AppCompatActivity {
         btnRetour = findViewById(R.id.btn_retour);
         btnDeconnexion = findViewById(R.id.btn_deconnexion_profil);
 
-        // Afficher les informations du profil
         afficherInfosProfil();
 
-        // Mettre à jour la dernière visite et le compteur
         mettreAJourVisiteProfil();
 
         btnChangerEmail.setOnClickListener(new View.OnClickListener() {

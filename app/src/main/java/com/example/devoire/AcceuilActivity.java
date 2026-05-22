@@ -27,7 +27,6 @@ public class AcceuilActivity extends AppCompatActivity {
 
         preferencesApp = getSharedPreferences("app_prefs", MODE_PRIVATE);
 
-        // Charger et appliquer le thème
         boolean estThemeSombre = preferencesApp.getBoolean("theme_sombre", false);
         appliquerTheme(estThemeSombre);
 
@@ -73,12 +72,10 @@ public class AcceuilActivity extends AppCompatActivity {
                 .setPositiveButton("OUI", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
-                        // Effacer le mot de passe
                         SharedPreferences.Editor editor = preferencesApp.edit();
                         editor.remove("mot_de_passe");
                         editor.apply();
 
-                        // Revenir vers MainActivity
                         Intent intent = new Intent(AcceuilActivity.this, MainActivity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);

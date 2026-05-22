@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         preferencesApp = getSharedPreferences("app_prefs", MODE_PRIVATE);
 
-        // Charger le thème sauvegardé
         boolean estThemeSombre = preferencesApp.getBoolean("theme_sombre", false);
         appliquerTheme(estThemeSombre);
 
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity {
         etEmail = findViewById(R.id.et_email);
         etPassword = findViewById(R.id.et_password);
 
-        // Charger l'email sauvegardé s'il existe
         String emailSauvegarde = preferencesApp.getString("email_utilisateur", "");
         if (!emailSauvegarde.isEmpty()) {
             etEmail.setText(emailSauvegarde);
@@ -66,7 +64,6 @@ public class MainActivity extends AppCompatActivity {
                 String motDePasse = etPassword.getText().toString();
 
                 if (email.equals("tsiarofy@gmail.com") && motDePasse.equals("tsiarofy")) {
-                    // Capture de l'heure actuelle
                     Date dateActuelle = new Date();
                     SimpleDateFormat formatHeure = new SimpleDateFormat("HH:mm:ss", Locale.getDefault());
                     SimpleDateFormat formatDate = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
@@ -74,13 +71,11 @@ public class MainActivity extends AppCompatActivity {
                     String heureConnexion = formatHeure.format(dateActuelle);
                     String dateConnexion = formatDate.format(dateActuelle);
 
-                    // Sauvegarder la dernière connexion
                     SharedPreferences.Editor editor = preferencesApp.edit();
                     editor.putString("heure_connexion", heureConnexion);
                     editor.putString("date_connexion", dateConnexion);
                     editor.putString("email_utilisateur", email);
 
-                    // Sauvegarder la première connexion si elle n'existe pas
                     if (!preferencesApp.contains("date_premiere_connexion")) {
                         editor.putString("date_premiere_connexion", dateConnexion);
                         editor.putString("heure_premiere_connexion", heureConnexion);
@@ -105,6 +100,6 @@ public class MainActivity extends AppCompatActivity {
         } else {
             findViewById(android.R.id.content).setBackgroundColor(getResources().getColor(android.R.color.white));
         }
-    
-}
+
+    }
 }
