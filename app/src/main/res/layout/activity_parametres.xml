@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container_parametres"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paramètres"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="30dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sélectionner le thème :"
+        android:textSize="18sp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_theme_clair"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thème clair"
+        android:layout_marginBottom="10dp"/>
+
+    <Button
+        android:id="@+id/btn_theme_sombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Thème sombre"
+        android:layout_marginBottom="30dp"/>
+
+    <Button
+        android:id="@+id/btn_retour_parametres"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Retour"/>
+
+</LinearLayout>
